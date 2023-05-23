@@ -54,6 +54,11 @@ class MyAppState extends ChangeNotifier
 
         notifyListeners();
     }
+
+    bool hasCurrent()
+    {
+        return favorites.contains(current);
+    }
 }
 
 
@@ -72,11 +77,34 @@ class MyHomePage extends StatelessWidget
                     children: [
                         BigCard(pair: pair),
                         SizedBox(height: 10),
-                        ElevatedButton(
-                            onPressed: () {
-                                appState.getNext();
-                            },
-                            child: Text('Next'),
+                        Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                                ElevatedButton(
+                                    onPressed: () {
+                                        appState.toggleFavorite();
+                                    },
+                                    child: Row(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: [
+                                            Icon(
+                                                appState.hasCurrent() 
+                                                ? Icons.favorite
+                                                : Icons.favorite_border
+                                            ),
+                                            SizedBox(width: 8),
+                                            Text('Like')
+                                        ]
+                                    ),
+                                ),
+                                SizedBox(width: 8),
+                                ElevatedButton(
+                                    onPressed: () {
+                                        appState.getNext();
+                                    },
+                                    child: Text('Next'),
+                                ),
+                            ],
                         ),
                     ],
                 ),
