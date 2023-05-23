@@ -1,6 +1,6 @@
-# namer_app
+# Namer App
 
-A new Flutter project.
+This project is a part of the [**Build Apps with Flutter**](https://developers.google.com/learn/pathways/intro-to-flutter) pathway, specifically 3rd challenge [**Your First Flutter App**](https://codelabs.developers.google.com/codelabs/flutter-codelab-first) on [Google Codelabs](https://codelabs.developers.google.com/).
 
 ## Getting Started
 
