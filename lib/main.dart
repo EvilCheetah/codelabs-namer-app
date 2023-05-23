@@ -71,15 +71,24 @@ class MyHomePage extends StatelessWidget
 
 class BigCard extends StatelessWidget
 {
+    final WordPair pair;
+    
     const BigCard({
         super.key,
         required this.pair,
     });
 
-    final WordPair pair;
-
     @override
-    Widget build(BuildContext context) {
-        return Text(pair.asLowerCase);
+    Widget build(BuildContext context)
+    {
+        var theme = Theme.of(context);
+
+        return Card(
+            color: theme.colorScheme.primary,
+            child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text(pair.asLowerCase),
+            ),
+        );
     }
 }
