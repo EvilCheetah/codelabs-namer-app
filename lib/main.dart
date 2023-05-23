@@ -54,11 +54,6 @@ class MyAppState extends ChangeNotifier
 
         notifyListeners();
     }
-
-    bool hasCurrent()
-    {
-        return favorites.contains(current);
-    }
 }
 
 
@@ -88,7 +83,7 @@ class MyHomePage extends StatelessWidget
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                             Icon(
-                                                appState.hasCurrent() 
+                                                appState.favorites.contains(pair)
                                                 ? Icons.favorite
                                                 : Icons.favorite_border
                                             ),
